@@ -11,7 +11,7 @@ namespace Projeto.Infra.Data.Contexts
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DbContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
 
@@ -24,5 +24,6 @@ namespace Projeto.Infra.Data.Contexts
             modelBuilder.ApplyConfiguration(new FuncionarioMap());
             modelBuilder.ApplyConfiguration(new DependenteMap());
         }
+       
     }
 }
