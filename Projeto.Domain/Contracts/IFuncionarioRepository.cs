@@ -10,5 +10,8 @@ namespace Projeto.Domain.Contracts
     public interface IFuncionarioRepository : IBaseRepository<Funcionario>
     {
         Funcionario GetByCpf(string cpf);
+
+        int CountDependentes(int idFuncionario);
+        
     }
 }
