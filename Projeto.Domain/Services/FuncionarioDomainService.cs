@@ -22,5 +22,34 @@ namespace Projeto.Domain.Services
         {
             _funcionarioRepository = funcionarioRepository;
         }
+
+        public override void Add(Funcionario obj)
+        {
+            var registro = _funcionarioRepository.GetByCpf(obj.Cpf);
+
+            if (registro != null)
+            {
+                throw new Exception("Cpf já consta na base de dados. ");
+            }
+            else
+            {
+                _funcionarioRepository.Add(obj);
+            }
+         
+        }
+
+        public override void Update(Funcionario obj)
+        {
+            var registro = _funcionarioRepository.GetByCpf(obj.Cpf);
+
+            if (registro != null && registro.IdFuncionario != obj.IdFuncionario)
+            {
+                throw new Exception("Cpf já consta na base de dados. ");
+            }
+            else
+            {
+                _funcionarioRepository.Update(obj);
+            }
+        }
     }
 }
