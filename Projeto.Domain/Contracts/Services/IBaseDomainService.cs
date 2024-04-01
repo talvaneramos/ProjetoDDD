@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto.Domain.Contracts
+namespace Projeto.Domain.Contracts.Services
 {
-    public interface IBaseRepository<T> where T : class
+    public interface IBaseDomainService<T> 
+        where T : class
     {
         void Add(T entity);
         void Update(T entity);

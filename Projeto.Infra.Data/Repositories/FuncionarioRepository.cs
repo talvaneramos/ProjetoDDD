@@ -1,4 +1,4 @@
-﻿using Projeto.Domain.Contracts;
+﻿using Projeto.Domain.Contracts.Repositories;
 using Projeto.Domain.Entities;
 using Projeto.Infra.Data.Contexts;
 using System;

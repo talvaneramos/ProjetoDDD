@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto.Domain.Contracts
+namespace Projeto.Domain.Contracts.Repositories
 {
     public interface IDependenteRepository : IBaseRepository<Dependente>
     {

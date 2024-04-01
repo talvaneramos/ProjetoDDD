@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Projeto.Domain.Contracts;
+using Projeto.Domain.Contracts.Repositories;
 using Projeto.Infra.Data.Contexts;
 using System;
 using System.Collections.Generic;
