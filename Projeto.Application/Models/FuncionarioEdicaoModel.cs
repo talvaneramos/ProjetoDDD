@@ -22,6 +22,6 @@ namespace Projeto.Application.Models
         public string? DataAdmissao { get; set; }
 
         [Required(ErrorMessage = "Por favor, informe o salário do Funcionário. ")]
-        public string? Decimal { get; set; }
+        public string? Salario { get; set; }
     }
 }

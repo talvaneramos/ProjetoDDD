@@ -10,7 +10,7 @@ namespace Projeto.Domain.Entities
     {
         public int IdDependente { get; set; }
         public string? Nome { get; set; }
-        public DateTime? DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
         public int IdFuncionario { get; set; }
 
         public Funcionario? Funcionario { get; set; }

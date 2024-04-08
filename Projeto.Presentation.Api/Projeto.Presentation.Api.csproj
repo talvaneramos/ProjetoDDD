@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <WarningsAsErrors>CS8600;CS8602;CS8603;CS8604;</WarningsAsErrors>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -14,6 +15,12 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto.Application\Projeto.Application.csproj" />
+    <ProjectReference Include="..\Projeto.Domain\Projeto.Domain.csproj" />
+    <ProjectReference Include="..\Projeto.Infra.Data\Projeto.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
