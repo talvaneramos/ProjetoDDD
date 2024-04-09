@@ -19,30 +19,30 @@ namespace Projeto.Infra.Data.Repositories
             _dataContext = dataContext;
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             _dataContext.Entry(entity).State = EntityState.Added;
             _dataContext.SaveChanges();
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             _dataContext.Entry(entity).State = EntityState.Modified;
             _dataContext.SaveChanges();
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             _dataContext.Entry(entity).State = EntityState.Deleted;
             _dataContext.SaveChanges();
         }
 
-        public List<T> GetAll()
+        public virtual List<T> GetAll()
         {
             return _dataContext.Set<T>().ToList();
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return _dataContext.Set<T>().Find(id);
         }

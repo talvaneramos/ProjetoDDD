@@ -1,4 +1,5 @@
-﻿using Projeto.Domain.Contracts.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using Projeto.Domain.Contracts.Repositories;
 using Projeto.Domain.Entities;
 using Projeto.Infra.Data.Contexts;
 using System;
@@ -17,6 +18,22 @@ namespace Projeto.Infra.Data.Repositories
             : base(dataContext) 
         {
             _dataContext = dataContext;
+        }
+
+        public override List<Dependente> GetAll()
+        {
+            return _dataContext
+                        .Dependente
+                        .Include(d => d.Funcionario)
+                        .ToList();
+        }
+
+        public override Dependente GetById(int id)
+        {
+            return _dataContext
+                        .Dependente
+                        .Include(d => d.Funcionario)
+                        .FirstOrDefault(d => d.IdFuncionario == id);
         }
     }
 }
