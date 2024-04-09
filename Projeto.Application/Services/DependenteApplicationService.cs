@@ -68,7 +68,7 @@ namespace Projeto.Application.Services
                 model.IdDependente = item.IdDependente.ToString();
                 model.Nome = item.Nome;
                 model.DataNascimento = item.DataNascimento.ToString("dd/MM/yyyy");
-                model.IdFuncionario = item.Funcionario.ToString();
+                model.IdFuncionario = item.IdFuncionario.ToString();
 
                 lista.Add(model);
             }
