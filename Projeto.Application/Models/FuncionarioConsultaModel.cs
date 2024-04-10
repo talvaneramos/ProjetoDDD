@@ -13,5 +13,7 @@ namespace Projeto.Application.Models
         public string? Cpf { get; set; } 
         public string? DataAdmissao { get; set; }
         public string? Salario { get; set; }
+
+        public List<DependenteConsultaModel>? Dependentes { get; set; }
     }
 }

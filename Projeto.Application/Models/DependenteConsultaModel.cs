@@ -12,5 +12,7 @@ namespace Projeto.Application.Models
         public string? Nome { get; set; }
         public string? DataNascimento { get; set; }
         public string? IdFuncionario { get; set; }
+
+        public FuncionarioConsultaModel? Funcionario { get; set; }
     }
 }
