@@ -47,8 +47,7 @@ namespace Projeto.Infra.Data.Repositories
         public int CountDependentes(int idFuncionario)
         {
             return _dataContext
-                        .Dependente
-                        .Count(f => f.IdFuncionario == idFuncionario);
+                        .Dependente.Count(f => f.IdFuncionario == idFuncionario);
         }
     }
 }
