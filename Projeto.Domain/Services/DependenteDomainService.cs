@@ -23,6 +23,12 @@ namespace Projeto.Domain.Services
 
         public override void Add(Dependente obj)
         {
+            if(ObterIdade(obj.DataNascimento) >= 18)
+            {
+                throw new Exception("O Dependente precisa ser menor de idade");
+            }
+
+
             var quantidade = _funcionarioRepository.CountDependentes(obj.IdFuncionario);
 
             if (quantidade >= 3)
@@ -37,6 +43,11 @@ namespace Projeto.Domain.Services
 
         public override void Update(Dependente obj)
         {
+            if (ObterIdade(obj.DataNascimento) >= 18)
+            {
+                throw new Exception("O Dependente precisa ser menor de idade");
+            }
+
             var quantidade = _funcionarioRepository.CountDependentes(obj.IdFuncionario);
 
             if (quantidade >= 3)
@@ -48,5 +59,17 @@ namespace Projeto.Domain.Services
                 _dependenteRepository.Update(obj);
             }
         }
+        
+        private int ObterIdade(DateTime dataNascimento)
+        {
+            var idade = DateTime.Now.Year - dataNascimento.Year;
+
+            if(DateTime.Now.DayOfYear < dataNascimento.DayOfYear)
+            {
+                idade--;
+            }
+            return idade;
+        }
+        
     }
 }
