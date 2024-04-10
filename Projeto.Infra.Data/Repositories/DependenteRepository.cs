@@ -33,7 +33,7 @@ namespace Projeto.Infra.Data.Repositories
             return _dataContext
                         .Dependente
                         .Include(d => d.Funcionario)
-                        .FirstOrDefault(d => d.IdFuncionario == id);
+                        .FirstOrDefault(d => d.IdDependente == id);
         }
     }
 }
