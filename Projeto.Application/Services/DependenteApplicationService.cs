@@ -70,6 +70,12 @@ namespace Projeto.Application.Services
                 model.DataNascimento = item.DataNascimento.ToString("dd/MM/yyyy");
                 model.IdFuncionario = item.IdFuncionario.ToString();
 
+                model.Funcionario = new FuncionarioConsultaModel();
+                model.Funcionario.IdFuncionario = item.Funcionario.IdFuncionario.ToString();
+                model.Funcionario.Nome = item.Funcionario.Nome;
+                model.Funcionario.Salario = item.Funcionario.Salario.ToString();
+                model.Funcionario.DataAdmissao = item.Funcionario.DataAdmissao.ToString("dd/MM/yyyy");
+
                 lista.Add(model);
             }
             return lista;
@@ -87,6 +93,12 @@ namespace Projeto.Application.Services
                 model.Nome = dependente.Nome;
                 model.DataNascimento = dependente.DataNascimento.ToString("dd/MM/yyyy");
                 model.IdFuncionario = dependente.IdFuncionario.ToString();
+
+                model.Funcionario = new FuncionarioConsultaModel();
+                model.Funcionario.IdFuncionario = dependente.Funcionario.IdFuncionario.ToString();
+                model.Funcionario.Nome = dependente.Funcionario.Nome;
+                model.Funcionario.Salario = dependente.Funcionario.Salario.ToString();
+                model.Funcionario.DataAdmissao = dependente.Funcionario.DataAdmissao.ToString("dd/MM/yyyy");
 
                 return model;
             }

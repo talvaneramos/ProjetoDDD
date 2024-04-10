@@ -73,6 +73,21 @@ namespace Projeto.Application.Services
                 model.Salario = item.Salario.ToString();
                 model.DataAdmissao = item.DataAdmissao.ToString("dd/MM/yyyy");
 
+                model.Dependentes = new List<DependenteConsultaModel>();
+
+                foreach (var dependente in item.Dependentes)
+                {
+                    var modelDependente = new DependenteConsultaModel();
+
+                    modelDependente.IdDependente = dependente.IdDependente.ToString();
+                    modelDependente.Nome = dependente.Nome;
+                    modelDependente.DataNascimento = dependente.DataNascimento.ToString("dd/MM/yyyy");
+                    modelDependente.IdFuncionario = dependente.IdFuncionario.ToString();
+
+                    model.Dependentes.Add(modelDependente);
+
+                }
+
                 lista.Add(model);
             }
             return lista;
@@ -91,6 +106,19 @@ namespace Projeto.Application.Services
                 model.Cpf = funcionario.Cpf;
                 model.Salario = funcionario.Salario.ToString();
                 model.DataAdmissao = funcionario.DataAdmissao.ToString("dd/MM/yyyy");
+
+                foreach (var dependente in funcionario.Dependentes)
+                {
+                    var modelDependente = new DependenteConsultaModel();
+
+                    modelDependente.IdDependente = dependente.IdDependente.ToString();
+                    modelDependente.Nome = dependente.Nome;
+                    modelDependente.DataNascimento = dependente.DataNascimento.ToString("dd/MM/yyyy");
+                    modelDependente.IdFuncionario = dependente.IdFuncionario.ToString();
+
+                    model.Dependentes.Add(modelDependente);
+
+                }
 
                 return model;
             }
